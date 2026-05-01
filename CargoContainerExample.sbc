@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <!-- CARGO CONTAINER TEMPLATE -->
+    <Definition xsi:type="MyObjectBuilder_CargoContainerDefinition">
+      <Id>
+        <TypeId>CargoContainer</TypeId>
+        <SubtypeId>Template_CargoContainer</SubtypeId>
+      </Id>
+      <DisplayName>Custom Cargo Container</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\container.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\CargoContainerSmall.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="30" />
+        <Component Subtype="Construction" Count="35" />
+        <Component Subtype="MetalGrid" Count="4" />
+        <Component Subtype="InteriorPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="MetalGrid" Index="0" />
+      <BuildTimeSeconds>15</BuildTimeSeconds>
+      <PCU>10</PCU>
+      
+      <!-- Volume in Liters (SE calculates volume automatically for cargo blocks usually, but this forces max size) -->
+      <InventorySize>
+        <X>2.5</X><Y>2.5</Y><Z>2.5</Z> <!-- Dimensions in meters. 2.5x2.5x2.5 = 15,625 Liters -->
+      </InventorySize>
+    </Definition>
+
+    </Definition>
+  </CubeBlocks>
+</Definitions>

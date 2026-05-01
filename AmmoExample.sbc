@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+  
+    <!-- THE PROJECTILE THAT GETS FIRED -->
+    <Ammos>
+      <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+        <Id>
+          <TypeId>AmmoDefinition</TypeId>
+          <SubtypeId>Template_25x184mm</SubtypeId>
+        </Id>
+        <BasicProperties>
+          <DesiredSpeed>400</DesiredSpeed>
+          <SpeedVariance>0</SpeedVariance>
+          <MaxTrajectory>800</MaxTrajectory>
+          <BackkickForce>1.5</BackkickForce>
+          <PhysicalMaterial>GunBase</PhysicalMaterial>
+        </BasicProperties>
+        <ProjectileProperties>
+          <ProjectileTrailScale>0.1</ProjectileTrailScale>
+          <ProjectileHitImpulse>2</ProjectileHitImpulse>
+          <ProjectileMassDamage>150</ProjectileMassDamage> <!-- Damage done to blocks -->
+          <ProjectileHealthDamage>33</ProjectileHealthDamage> <!-- Damage done to players -->
+          <HeadShot>true</HeadShot>
+        </ProjectileProperties>
+      </Ammo>
+    </Ammos>
+
+  </CubeBlocks>
+</Definitions>

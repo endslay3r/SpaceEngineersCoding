@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <!-- ASSEMBLER TEMPLATE -->
+    <Definition xsi:type="MyObjectBuilder_AssemblerDefinition">
+      <Id>
+        <TypeId>Assembler</TypeId>
+        <SubtypeId>Template_Assembler</SubtypeId>
+      </Id>
+      <DisplayName>Custom Assembler</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\assembler.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="2" />
+      <Model>Models\Cubes\Large\Assembler.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="120" />
+        <Component Subtype="Computer" Count="160" />
+        <Component Subtype="Motor" Count="20" />
+        <Component Subtype="SteelPlate" Count="20" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>80</BuildTimeSeconds>
+      <PCU>40</PCU>
+
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <InventoryMaxVolume>4</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X><Y>1</Y><Z>1</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption>
+      <OperationalPowerConsumption>0.56</OperationalPowerConsumption>
+      
+      <!-- What it can build (links to BlueprintClassEntries.sbc) -->
+      <BlueprintClasses>
+        <Class>LargeBlocks</Class>
+        <Class>SmallBlocks</Class>
+        <Class>Components</Class>
+        <Class>Tools</Class>
+      </BlueprintClasses>
+      
+      <AssemblySpeed>1.0</AssemblySpeed> <!-- Multiplier. 2.0 is twice as fast -->
+    </Definition>
+  </CubeBlocks>
+</Definitions>

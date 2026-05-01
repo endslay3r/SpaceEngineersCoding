@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition xsi:type="MyObjectBuilder_CockpitDefinition">
+      <Id>
+        <TypeId>Cockpit</TypeId>
+        <SubtypeId>Template_Cockpit</SubtypeId>
+      </Id>
+      <DisplayName>Custom Flight Seat</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\PassengerSeat.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\PassengerSeat.mwm</Model>
+      <Components>
+        <Component Subtype="InteriorPlate" Count="20" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="Computer" Count="100" />
+        <Component Subtype="Display" Count="4" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>20</BuildTimeSeconds>
+      <PCU>50</PCU>
+
+      <!-- Player Interaction Details -->
+      <CharacterAnimation>passengerseat_large</CharacterAnimation> <!-- Animation ID for sitting -->
+      <IsPressurized>false</IsPressurized> <!-- True if enclosed cockpit -->
+      <EnableShipControl>true</EnableShipControl>
+      <EnableBuilderCockpit>true</EnableBuilderCockpit>
+      
+      <!-- Oxygen settings (Optional: Remove if it's an open seat) -->
+      <OxygenCapacity>60</OxygenCapacity>
+      <IsAirTight>false</IsAirTight>
+
+      <!-- LCD Screens inside the cockpit (Optional) -->
+      <ScreenAreas>
+        <ScreenArea Name="CockpitScreen_01" DisplayName="Main Screen" TextureResolution="256" ScreenWidth="1" ScreenHeight="1" />
+      </ScreenAreas>
+
+      <GetInSound>ShipSmCockpitIn</GetInSound>
+      <GetOutSound>ShipSmCockpitOut</GetOutSound>
+    </Definition>
+  </CubeBlocks>
+</Definitions>

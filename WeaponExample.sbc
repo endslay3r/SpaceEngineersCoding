@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition xsi:type="MyObjectBuilder_WeaponBlockDefinition">
+      <Id>
+        <TypeId>SmallGatlingGun</TypeId>
+        <SubtypeId>Template_GatlingGun</SubtypeId>
+      </Id>
+      <DisplayName>Custom Gatling Gun</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\gatling_gun.dds</Icon>
+      <Description>Shoots 25x184mm NATO Ammo.</Description>
+      <CubeSize>Small</CubeSize>
+      <Size x="1" y="1" z="4" />
+      <Model>Models\Cubes\Small\GatlingGun.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1" />
+        <Component Subtype="Construction" Count="1" />
+        <Component Subtype="MetalGrid" Count="2" />
+        <Component Subtype="SmallTube" Count="6" />
+        <Component Subtype="Motor" Count="1" />
+        <Component Subtype="Computer" Count="1" />
+        <Component Subtype="SteelPlate" Count="1" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>13</BuildTimeSeconds>
+      <PCU>50</PCU>
+
+      <!-- Weapon specifics -->
+      <WeaponDefinitionId Subtype="GatlingGun" /> <!-- Links to Weapons.sbc for damage, RPM, ammo type -->
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <InventoryMaxVolume>0.064</InventoryMaxVolume> <!-- How much ammo it can hold -->
+      
+      <!-- Visuals & Sounds -->
+      <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
+      <PrimarySound>WepShipGatlingShot</PrimarySound>
+    </Definition>
+  </CubeBlocks>
+</Definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- JUMP DRIVE -->
+    <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+      <Id>
+        <TypeId>JumpDrive</TypeId>
+        <SubtypeId>Template_JumpDrive</SubtypeId>
+      </Id>
+      <DisplayName>Custom Jump Drive</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\JumpDrive.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="3" y="3" z="2" />
+      <Model>Models\Cubes\Large\JumpDrive.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="40" />
+        <Component Subtype="MetalGrid" Count="50" />
+        <Component Subtype="GravityGenerator" Count="20" />
+        <Component Subtype="Detector" Count="20" />
+        <Component Subtype="Superconductor" Count="1000" />
+        <Component Subtype="Computer" Count="300" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="SteelPlate" Count="20" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>120</BuildTimeSeconds>
+      <PCU>100</PCU>
+
+      <ResourceSinkGroup>Charging</ResourceSinkGroup>
+      <RequiredPowerInput>32</RequiredPowerInput> <!-- Charging speed factor -->
+      <PowerNeededForJump>3</PowerNeededForJump> <!-- Energy required to jump (MWh) -->
+      <MaxJumpDistance>2000000</MaxJumpDistance> <!-- Max jump distance in Meters (2,000km) -->
+      <MaxJumpMass>1250000</MaxJumpMass> <!-- Ship mass limit for max distance -->
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

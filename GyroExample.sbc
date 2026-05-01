@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- GYROSCOPE -->
+    <Definition xsi:type="MyObjectBuilder_GyroDefinition">
+      <Id>
+        <TypeId>Gyro</TypeId>
+        <SubtypeId>Template_Gyro</SubtypeId>
+      </Id>
+      <DisplayName>Custom Gyroscope</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\gyro.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\gyroscope.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="500" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="LargeTube" Count="4" />
+        <Component Subtype="Motor" Count="4" />
+        <Component Subtype="Computer" Count="5" />
+        <Component Subtype="SteelPlate" Count="100" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <PCU>50</PCU>
+
+      <ForceMagnitude>3.36E+07</ForceMagnitude> <!-- Turning power. Increase for stronger gyros -->
+      <RequiredPowerInput>0.01</RequiredPowerInput>
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

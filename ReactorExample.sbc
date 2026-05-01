@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <!-- REACTOR TEMPLATE -->
+    <Definition xsi:type="MyObjectBuilder_ReactorDefinition">
+      <Id>
+        <TypeId>Reactor</TypeId>
+        <SubtypeId>Template_Reactor</SubtypeId>
+      </Id>
+      <DisplayName>Custom Reactor</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\nuclear_reactor.dds</Icon>
+      <CubeSize>Large</CubeSize>                              <! -- Determines Block Size --!>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\GeneratorSmall.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="50" />
+        <Component Subtype="Reactor" Count="100" />
+        <Component Subtype="Superconductor" Count="100" />
+        <Component Subtype="SteelPlate" Count="30" />
+      </Components>
+      <CriticalComponent Subtype="Superconductor" Index="0" />
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <PCU>25</PCU>
+      
+      <!-- Power Settings -->
+      <MaxPowerOutput>15</MaxPowerOutput>
+      <InventorySize>
+        <X>1</X><Y>1</Y><Z>1</Z>
+      </InventorySize>
+      <FuelInfos>
+        <FuelInfo>
+          <Id>
+            <TypeId>Ingot</TypeId>
+            <SubtypeId>Uranium</SubtypeId>
+          </Id>
+        </FuelInfo>
+      </FuelInfos>
+      <FuelProductionToCapacityMultiplier>0.005</FuelProductionToCapacityMultiplier> <!-- Determines fuel consumption rate -->
+    </Definition>
+  </CubeBlocks>
+</Definitions>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- BATTERY -->
+    <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">
+      <Id>
+        <TypeId>BatteryBlock</TypeId>
+        <SubtypeId>Template_Battery</SubtypeId>
+      </Id>
+      <DisplayName>Custom Battery</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\Battery.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="1" />
+      <Model>Models\Cubes\Large\BatteryLarge.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="20" />
+        <Component Subtype="Construction" Count="10" />
+        <Component Subtype="PowerCell" Count="80" />
+        <Component Subtype="Computer" Count="25" />
+        <Component Subtype="SteelPlate" Count="60" />
+      </Components>
+      <CriticalComponent Subtype="PowerCell" Index="0" />
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <PCU>15</PCU>
+
+      <MaxPowerOutput>12</MaxPowerOutput> <!-- Output in MW -->
+      <MaxPowerInput>12</MaxPowerInput> <!-- Input in MW -->
+      <MaxStoredPower>3</MaxStoredPower> <!-- Capacity in MWh -->
+      <InitialStoredPowerRatio>0.3</InitialStoredPowerRatio> <!-- Spawns with 30% charge -->
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

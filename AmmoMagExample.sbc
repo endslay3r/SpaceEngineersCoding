@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- THE ITEM IN YOUR INVENTORY -->
+    <AmmoMagazines>
+      <AmmoMagazine>
+        <Id>
+          <TypeId>AmmoMagazine</TypeId>
+          <SubtypeId>Template_NATO_25x184mm</SubtypeId>
+        </Id>
+        <DisplayName>Custom 25x184mm NATO ammo</DisplayName>
+        <Icon>Textures\GUI\Icons\ammo\Ammo_Box.dds</Icon>
+        <Size>
+          <X>0.25</X><Y>0.2</Y><Z>0.2</Z>
+        </Size>
+        <Mass>35</Mass>
+        <Volume>16</Volume>
+        <Model>Models\Weapons\Ammo_Box.mwm</Model>
+        <Capacity>140</Capacity> <!-- Rounds per magazine -->
+        <AmmoDefinitionId Subtype="Template_25x184mm" /> <!-- Links to the Projectile below -->
+      </AmmoMagazine>
+    </AmmoMagazines>
+
+  </CubeBlocks>
+</Definitions>

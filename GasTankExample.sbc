@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- GAS TANK TEMPLATE -->
+    <Definition xsi:type="MyObjectBuilder_GasTankDefinition">
+      <Id>
+        <TypeId>OxygenTank</TypeId> <!-- TypeId is OxygenTank for ALL gas tanks (Hydrogen too) -->
+        <SubtypeId>Template_HydrogenTank</SubtypeId>
+      </Id>
+      <DisplayName>Custom Hydrogen Tank</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\HydrogenTank.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="3" y="3" z="3" />
+      <Model>Models\Cubes\Large\HydrogenTank.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="160" />
+        <Component Subtype="LargeTube" Count="80" />
+        <Component Subtype="Computer" Count="8" />
+        <Component Subtype="SteelPlate" Count="120" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>50</BuildTimeSeconds>
+      <PCU>25</PCU>
+
+      <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <Capacity>15000000</Capacity> <!-- Capacity in Liters -->
+      <StoredGasId>
+        <TypeId>GasProperties</TypeId>
+        <SubtypeId>Hydrogen</SubtypeId> <!-- Change to "Oxygen" for O2 tank -->
+      </StoredGasId>
+      <OperationalPowerConsumption>0.001</OperationalPowerConsumption>
+      <StandbyPowerConsumption>0.000001</StandbyPowerConsumption>
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

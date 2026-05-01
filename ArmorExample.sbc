@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition xsi:type="MyObjectBuilder_CubeBlockDefinition">
+      <Id>
+        <TypeId>CubeBlock</TypeId>
+        <SubtypeId>Template_ArmorBlock</SubtypeId>
+      </Id>
+      <DisplayName>Custom Armor Block</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\armor_cube.dds</Icon>
+      <Description>A basic structural block.</Description>
+      <CubeSize>Large</CubeSize> <!-- "Large" or "Small" -->
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\Cubes\Large\Armor\SquarePlate.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="25" />
+      </Components>
+      <CriticalComponent Subtype="SteelPlate" Index="0" />
+      <MountPoints>
+        <!-- Defines where other blocks can attach. Default usually covers all sides if omitted for full cubes -->
+        <MountPoint Side="Front" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <MountPoint Side="Back" StartX="0" StartY="0" EndX="1" EndY="1" />
+        <!-- Add Top, Bottom, Left, Right as needed -->
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\Armor\SquarePlateConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\Armor\SquarePlateConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\Armor\SquarePlateConstruction_3.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>Template_ArmorBlock</BlockPairName> <!-- Link Small and Large grid versions -->
+      <EdgeType>Light</EdgeType> <!-- Light or Heavy -->
+      <BuildTimeSeconds>5</BuildTimeSeconds>
+      <PCU>1</PCU>
+      <IsAirTight>true</IsAirTight> <!-- Optional: false for grating/windows -->
+      <DeformationRatio>0.2</DeformationRatio> <!-- Lower = harder to deform -->
+    </Definition>
+  </CubeBlocks>
+</Definitions>

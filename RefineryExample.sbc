@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <Definition xsi:type="MyObjectBuilder_RefineryDefinition">
+      <Id>
+        <TypeId>Refinery</TypeId>
+        <SubtypeId>Template_Refinery</SubtypeId>
+      </Id>
+      <DisplayName>Custom Refinery</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\refinery.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <!-- Standard vanilla refinery is 2 wide, 4 tall, 2 deep -->
+      <Size x="2" y="4" z="2" />
+      <Model>Models\Cubes\Large\Refinery.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="1100" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="LargeTube" Count="20" />
+        <Component Subtype="Motor" Count="16" />
+        <Component Subtype="Computer" Count="20" />
+        <Component Subtype="SteelPlate" Count="100" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>90</BuildTimeSeconds>
+      <PCU>90</PCU>
+
+      <!-- Inventory and Power -->
+      <InventoryMaxVolume>7.5</InventoryMaxVolume>
+      <InventorySize>
+        <X>2.5</X><Y>2.5</Y><Z>2.5</Z>
+      </InventorySize>
+      <StandbyPowerConsumption>0.001</StandbyPowerConsumption> <!-- 1 kW -->
+      <OperationalPowerConsumption>0.56</OperationalPowerConsumption> <!-- 560 kW -->
+
+      <!-- What can it refine? (Links to BlueprintClassEntries.sbc) -->
+      <BlueprintClasses>
+        <Class>Ingots</Class> <!-- "Ingots" covers all standard ores. "BasicIngots" limits it like the Basic Refinery -->
+      </BlueprintClasses>
+
+      <!-- Refinery Performance Settings -->
+      <RefineSpeed>1.0</RefineSpeed> <!-- 2.0 would process ore twice as fast -->
+      <MaterialEfficiency>1.0</MaterialEfficiency> <!-- 1.0 = standard vanilla yield. 2.0 = double the ingots from the same ore -->
+      <OreAmountPerPullRequest>2000</OreAmountPerPullRequest> <!-- How much ore it tries to grab from conveyors at once -->
+
+      <!-- ====================================================================== -->
+      <!-- OPTIONAL: UPGRADE MODULE SETTINGS                                      -->
+      <!-- If you don't want modules to work on this block, delete this section   -->
+      <!-- ====================================================================== -->
+      <PrimarySound>BlockRafinery</PrimarySound>
+      <ActionSound>BlockRafineryProcess</ActionSound>
+      
+      <!-- Defines what modules are allowed to affect this block -->
+      <Upgrades>
+        <MyUpgradeModuleInfo>
+          <UpgradeType>Productivity</UpgradeType> <!-- Speed module -->
+          <Modifier>1</Modifier>
+          <ModifierType>Additive</ModifierType>
+        </MyUpgradeModuleInfo>
+        <MyUpgradeModuleInfo>
+          <UpgradeType>Effectiveness</UpgradeType> <!-- Yield module -->
+          <Modifier>1</Modifier>
+          <ModifierType>Multiplicative</ModifierType>
+        </MyUpgradeModuleInfo>
+        <MyUpgradeModuleInfo>
+          <UpgradeType>PowerEfficiency</UpgradeType> <!-- Power module -->
+          <Modifier>1</Modifier>
+          <ModifierType>Multiplicative</ModifierType>
+        </MyUpgradeModuleInfo>
+      </Upgrades>
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

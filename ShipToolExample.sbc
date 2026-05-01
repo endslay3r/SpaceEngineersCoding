@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <!-- SHIP TOOLS -->
+    <Definition xsi:type="MyObjectBuilder_ShipDrillDefinition">
+      <Id>
+        <TypeId>ShipDrill</TypeId> <!-- CHANGE TO: ShipWelder OR ShipGrinder -->
+        <SubtypeId>Template_ShipDrill</SubtypeId>
+      </Id>
+      <DisplayName>Custom Ship Drill</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\drill.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="3" />
+      <Model>Models\Cubes\Large\drill.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="180" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="LargeTube" Count="12" />
+        <Component Subtype="Motor" Count="5" />
+        <Component Subtype="Computer" Count="5" />
+        <Component Subtype="SteelPlate" Count="20" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>30</BuildTimeSeconds>
+      <PCU>150</PCU>
+
+      <!-- Tool Specifics -->
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <SensorRadius>1.5</SensorRadius> <!-- Size of the digging/welding/grinding area -->
+      <SensorOffset>2.8</SensorOffset> <!-- How far forward the area reaches -->
+      
+      <!-- Drill only -->
+      <CutOutRadius>1.5</CutOutRadius>
+      <CutOutOffset>2.8</CutOutOffset>
+      <ParticleOffset>
+        <X>0</X><Y>0</Y><Z>-3.6</Z>
+      </ParticleOffset>
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

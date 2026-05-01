@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    <Definition xsi:type="MyObjectBuilder_RadioAntennaDefinition">
+      <Id>
+        <TypeId>RadioAntenna</TypeId>
+        <SubtypeId>Template_Antenna</SubtypeId>
+      </Id>
+      <DisplayName>Custom Antenna</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\antenna.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="6" z="1" />
+      <Model>Models\Cubes\Large\antenna.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="60" />
+        <Component Subtype="LargeTube" Count="40" />
+        <Component Subtype="Computer" Count="8" />
+        <Component Subtype="RadioCommunication" Count="40" />
+      </Components>
+      <CriticalComponent Subtype="RadioCommunication" Index="0" />
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <PCU>100</PCU>
+      
+      <!-- Comm Settings -->
+      <ResourceSinkGroup>Utility</ResourceSinkGroup>
+      <MaxBroadcastRadius>50000</MaxBroadcastRadius> <!-- Max range in meters -->
+    </Definition>
+  </CubeBlocks>
+</Definitions>

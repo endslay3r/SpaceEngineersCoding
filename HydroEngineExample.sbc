@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+
+    <Definition xsi:type="MyObjectBuilder_HydrogenEngineDefinition">
+      <Id>
+        <TypeId>HydrogenEngine</TypeId>
+        <SubtypeId>Template_HydrogenEngine</SubtypeId>
+      </Id>
+      <DisplayName>Custom Hydrogen Engine</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\HydrogenEngineLarge.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="1" y="1" z="2" />
+      <Model>Models\Cubes\Large\HydrogenEngine.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="80" />
+        <Component Subtype="Construction" Count="60" />
+        <Component Subtype="LargeTube" Count="12" />
+        <Component Subtype="Motor" Count="12" />
+        <Component Subtype="Computer" Count="4" />
+        <Component Subtype="SteelPlate" Count="20" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+      <PCU>25</PCU>
+
+      <MaxPowerOutput>5.0</MaxPowerOutput> <!-- Power output in Megawatts -->
+      <FuelCapacity>500000</FuelCapacity> <!-- Internal Hydrogen buffer in Liters -->
+      <FuelInfos>
+        <FuelInfo>
+          <Id>
+            <TypeId>GasProperties</TypeId>
+            <SubtypeId>Hydrogen</SubtypeId>
+          </Id>
+        </FuelInfo>
+      </FuelInfos>
+      <!-- How much power is generated per Liter of Hydrogen -->
+      <FuelProductionToCapacityMultiplier>0.02</FuelProductionToCapacityMultiplier> 
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>

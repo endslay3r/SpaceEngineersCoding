@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CubeBlocks>
+    
+    <!-- SOLAR PANEL TEMPLATE -->
+    <Definition xsi:type="MyObjectBuilder_SolarPanelDefinition">
+      <Id>
+        <TypeId>SolarPanel</TypeId>
+        <SubtypeId>Template_SolarPanel</SubtypeId>
+      </Id>
+      <DisplayName>Custom Solar Panel</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\SolarPanel.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <Size x="4" y="1" z="1" />
+      <Model>Models\Cubes\Large\SolarPanel.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="10" />
+        <Component Subtype="SolarCell" Count="64" />
+        <Component Subtype="BulletproofGlass" Count="4" />
+      </Components>
+      <CriticalComponent Subtype="SolarCell" Index="0" />
+      <BuildTimeSeconds>30</BuildTimeSeconds>
+      <PCU>55</PCU>
+      
+      <!-- Solar specific -->
+      <ResourceSourceGroup>SolarPanels</ResourceSourceGroup>
+      <MaxPowerOutput>0.16</MaxPowerOutput>               
+      <PanelOrientation>
+        <X>0</X><Y>0</Y><Z>-1</Z>
+      </PanelOrientation>
+      <TwoSidedPanel>true</TwoSidedPanel> <!-- Optional: true allows light from both sides -->
+      <PanelOffset>1.0</PanelOffset>
+    </Definition>
+
+  </CubeBlocks>
+</Definitions>
